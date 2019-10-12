@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { Button, Input, Icon } from "semantic-ui-react";
 import axios from "axios";
+import styled from "styled-components";
+
+const Namespace = styled.div`
+  padding-top: 10px;
+`;
 
 export default class AddListButton extends Component {
   state = {
@@ -39,6 +44,18 @@ export default class AddListButton extends Component {
     this.setState({ newList: false, name: "" });
   };
 
+  shownameSuggestions = () => {
+    const nameSuggestion = [];
+    axios
+      .get("http://localhost:8000/nameSuggestions")
+      .then(function(response) {
+        nameSuggestion.push(response.data);
+      })
+      .catch(function(error) {
+        console.log(`Error ${error} encountered`);
+      });
+  };
+  }
   onClose = () => {
     this.setState({ newList: false, name: "" });
   };
@@ -58,7 +75,7 @@ export default class AddListButton extends Component {
               onKeyPress={this.onKeyPress}
             />
           </div>
-          <div style={{ paddingTop: 10 }}>
+          <Namespace>
             <Button
               color="black"
               content="Add"
@@ -72,7 +89,7 @@ export default class AddListButton extends Component {
               onClick={() => this.onClose()}
               style={{ paddingLeft: 10 }}
             />
-          </div>
+          </Namespace>
         </div>
       );
     } else {
