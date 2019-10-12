@@ -70,25 +70,6 @@ app.listen(8000, () => {
   console.log("Go to http://localhost:8000/ to see posts");
 });
 
-// const mysql = require("mysql");
-
-// export const getConnectionObj = () => {
-//   const connection = mysql.createConnection({
-//     host: "127.0.0.1",
-//     user: "root",
-//     password: "root",
-//     database: "todos"
-//   });
-//   connection.connect(err => {
-//     if (err) {
-//       console.log("Error connecting to Db", err);
-//       return;
-//     }
-//     console.log("Connection established");
-//   });
-//   return connection;
-// };
-
 // export const createBucket = (connection, todoBucket) => {
 //   connection.query("INSERT INTO todolist SET ?", todoBucket, (err, res) => {
 //     if (err) throw err;

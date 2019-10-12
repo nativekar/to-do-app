@@ -60,7 +60,7 @@ export default class AddListButton extends Component {
           </div>
           <div style={{ paddingTop: 10 }}>
             <Button
-              color="teal"
+              color="black"
               content="Add"
               disabled={!(name && name.length > 0)}
               onClick={() => this.handleSave()}
@@ -79,7 +79,7 @@ export default class AddListButton extends Component {
       element = (
         <div>
           <Button
-            primary
+            secondary
             icon="plus"
             labelPosition="left"
             content="Add Todo List"

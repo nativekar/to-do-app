@@ -84,6 +84,7 @@ export default class Task extends Component {
               style={{ marginRight: 8 }}
               checked={isChecked}
               onClick={this.handleCheck}
+              tabindex="0"
             />
           ) : (
             ""

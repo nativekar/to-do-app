@@ -16,7 +16,7 @@ class List extends React.Component {
   onDrop = (ev, toListId) => {
     let task = ev.dataTransfer.getData("task");
     task = JSON.parse(task);
-    // this.props.actions.moveTask(toListId, task);
+    console.log(task);
   };
 
   render() {
