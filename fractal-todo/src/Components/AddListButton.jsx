@@ -37,7 +37,7 @@ export default class AddListButton extends Component {
         console.log(`Error ${error} encountered`);
       });
     this.setState({ newList: false, name: "" });
-  }
+  };
 
   onClose = () => {
     this.setState({ newList: false, name: "" });

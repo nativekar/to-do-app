@@ -10,8 +10,20 @@ class TaskLists extends Component {
   };
 
   componentDidMount() {
-   this.fetchTaskLists();
+    this.fetchTaskLists();
   }
+
+  fetchTaskLists = () => {
+    const that = this;
+    axios
+      .get("http://localhost:8000")
+      .then(function(response) {
+        that.formatResponse(response.data);
+      })
+      .catch(function(error) {
+        console.log(`Error ${error} encountered`);
+      });
+  };
 
   formatResponse(response) {
     let taskLists = [];
@@ -36,22 +48,8 @@ class TaskLists extends Component {
     this.setState({ taskLists });
   }
 
-  fetchTaskLists = () => {
-    const that = this;
-    axios
-      .get("http://localhost:8000")
-      .then(function(response) {
-        that.formatResponse(response.data);
-      })
-      .catch(function(error) {
-        // handle error
-        console.log(error);
-      });
-  };
-
   render() {
     const { taskLists } = this.state;
-
     return (
       <div className="lists">
         {taskLists &&

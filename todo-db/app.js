@@ -35,6 +35,37 @@ app.post("/saveTodoList", function(req, res) {
   });
 });
 
+app.post("/updateTodoList", function(req, res) {
+  const newList = {
+    name: req.body.name,
+    id: req.body.id
+  };
+  connection.query(
+    "UPDATE todolist SET name = ? Where id = ?",
+    newList,
+    function(error, results) {
+      if (error) throw error;
+      res.send(results);
+    }
+  );
+});
+
+app.post("/deleteTodoList", function(req, res) {
+  const newList = {
+    name: req.body.name,
+    id: req.body.id
+  };
+  connection.query(
+    "DELETE FROM todolist WHERE id = ?",
+    newList.id,
+    newList.name,
+    function(error, results) {
+      if (error) throw error;
+      res.send(results);
+    }
+  );
+});
+
 app.listen(8000, () => {
   console.log("Go to http://localhost:8000/ to see posts");
 });

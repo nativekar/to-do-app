@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 import { TextArea, Form, Icon, Checkbox } from "semantic-ui-react";
+import styled from "styled-components";
+
+const ListHolder = styled.div`
+  display: flex;
+  alignitems: center;
+`;
 
 export default class Task extends Component {
   state = {
@@ -72,7 +78,7 @@ export default class Task extends Component {
       );
     } else {
       element = (
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <ListHolder>
           {task && task.name ? (
             <Checkbox
               style={{ marginRight: 8 }}
@@ -97,7 +103,7 @@ export default class Task extends Component {
             </div>
             <p>{task && task.name}</p>
           </div>
-        </div>
+        </ListHolder>
       );
     }
 
