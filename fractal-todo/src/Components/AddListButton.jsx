@@ -22,10 +22,9 @@ export default class AddListButton extends Component {
     }
   };
 
-  handleSave() {
+  handleSave = () => {
     const name = this.state.name.trim();
     if (name.length === 0) return;
-
     const that = this;
     axios
       .post("http://localhost:8000/saveTodoList", {
@@ -46,7 +45,6 @@ export default class AddListButton extends Component {
 
   render() {
     const { newList, name } = this.state;
-
     let element;
     if (newList) {
       element = (
