@@ -55,7 +55,7 @@ export default class AddListButton extends Component {
         console.log(`Error ${error} encountered`);
       });
   };
-  }
+
   onClose = () => {
     this.setState({ newList: false, name: "" });
   };
