@@ -20,7 +20,7 @@
 
 <h3> Steps to be followed to run: </h3>
 <ul>
- <li>Clone the app. run <b> npm i inside both the fractal-todo and todo-db folder </b>.</li>
+ <li>Clone the app. run <b> npm i inside both the todo-ui and todo-db folder </b>.</li>
  <li>Run <i>npm start</i> from inside fractal-todo.</li>
  <li> Run <i>node app.js</i> from inside todo-db folder.</li>
 
