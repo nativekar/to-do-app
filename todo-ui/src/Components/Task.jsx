@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { TextArea, Form, Icon, Checkbox } from "semantic-ui-react";
 import styled from "styled-components";
+import axios from "axios";
 
 const ListHolder = styled.div`
   display: flex;
-  alignitems: center;
+  align-items: center;
 `;
 
 export default class Task extends Component {
@@ -16,8 +17,8 @@ export default class Task extends Component {
 
   componentDidMount() {
     const { task } = this.props;
-    if (task) {
-      this.setState({ isChecked: task.isdone });
+    if (task && !task.newTask) {
+      this.setState({ isChecked: task.isdone, name: task.name });
     }
   }
 
@@ -34,12 +35,58 @@ export default class Task extends Component {
   handleSave(task) {
     const name = this.state.name.trim();
     if (name.length === 0) {
-      this.props.deleteTask(task);
+      // this.props.deleteTask(task);
       return;
     }
+    if (task.newTask) this.saveTodo();
+    else this.updateTodo();
 
-    this.props.editTask({ id: task.id, name });
     this.setState({ editing: false, name: "" });
+  }
+
+  saveTodo() {
+    const that = this;
+    axios
+      .post("http://localhost:8000/saveTodo", {
+        name: this.state.name,
+        tasklistid: this.props.listId
+      })
+      .then(function(response) {
+        that.props.refreshDetails();
+      })
+      .catch(function(error) {
+        console.log(`Error ${error} encountered`);
+      });
+  }
+
+  updateTodo() {
+    const that = this;
+    axios
+      .post("http://localhost:8000/updateTodo", {
+        id: this.props.task.id,
+        isdone: this.state.isChecked,
+        name: this.state.name
+      })
+      .then(function(response) {
+        that.props.refreshDetails();
+      })
+      .catch(function(error) {
+        console.log(`Error ${error} encountered`);
+      });
+  }
+
+  deleteTodo() {
+    const that = this;
+    axios
+      .post("http://localhost:8000/deleteTodo", {
+        id: this.props.task.id
+      })
+      .then(function(response) {
+        that.props.refreshDetails();
+      })
+      .catch(function(error) {
+        console.log(`Error ${error} encountered`);
+      });
   }
 
   handleDoubleClick() {
@@ -54,13 +101,14 @@ export default class Task extends Component {
   };
 
   handleCheck = () => {
-    this.setState({ isChecked: !this.state.isChecked });
+    this.setState({ isChecked: !this.state.isChecked }, () => {
+      this.updateTodo();
+    });
   };
 
   render() {
     const { editing, name, isChecked } = this.state;
     const { task } = this.props;
-
     let element;
     if (editing || (task && task.newTask)) {
       element = (
@@ -99,7 +147,7 @@ export default class Task extends Component {
               <Icon
                 name="close"
                 color="red"
-                onClick={() => this.props.deleteTask(task)}
+                onClick={() => this.deleteTodo()}
               />
             </div>
             <p>{task && task.name}</p>

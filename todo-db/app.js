@@ -3,7 +3,7 @@ const mysql = require("mysql");
 const bodyparser = require("body-parser");
 
 const connection = mysql.createConnection({
-  host: "127.0.0.1",
+  host: "localhost",
   user: "root",
   password: "root",
   database: "todos"
@@ -17,7 +17,7 @@ app.use(bodyparser.json());
 // query call to fetch all buckets in the Todo
 app.get("/", function(req, res) {
   connection.query(
-    "select td.id, td.name, td.isdone, td.isnew, tl.id as tasklistid, tl.name as todolistname from todo td right join todolist tl on td.tasklistid = tl.id",
+    "select td.id, td.name, if(td.isdone, 'true', 'false') isdone, if(td.isnew, 'true', 'false') isnew, tl.id as tasklistid, tl.name as todolistname from todo td right join todolist tl on td.tasklistid = tl.id",
     function(error, results) {
       if (error) throw error;
       res.send(results);
@@ -66,6 +66,43 @@ app.post("/deleteTodoList", function(req, res) {
       res.send(results);
     }
   );
+});
+
+// query call to save a new todo
+app.post("/saveTodo", function(req, res) {
+  const newTodo = {
+    name: req.body.name,
+    tasklistid: req.body.tasklistid
+  };
+  connection.query("INSERT INTO todo SET ?", newTodo, function(error, results) {
+    if (error) throw error;
+    res.send(results);
+  });
+});
+
+// query call to update a todo
+app.post("/updateTodo", function(req, res) {
+  const { name, id, isdone } = req.body;
+  const params = [name, isdone, id];
+  connection.query(
+    "UPDATE todo SET name = ?, isdone = ? Where id = ?",
+    params,
+    function(error, results) {
+      if (error) throw error;
+      res.send(results);
+    }
+  );
+});
+
+// query call to delete a todo
+app.post("/deleteTodo", function(req, res) {
+  connection.query("DELETE FROM todo WHERE id = ?", req.body.id, function(
+    error,
+    results
+  ) {
+    if (error) throw error;
+    res.send(results);
+  });
 });
 
 //query call to get names for all buckets for suggestionsList
