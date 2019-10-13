@@ -12,7 +12,7 @@
 
 <li> To Mark the ToDos as done, and vice versa.</li>
 
-<li> The ability to drag and dro buckets in order to rearrange them. </li>
+<li> The ability to drag and drop buckets in order to rearrange them. </li>
 </ul>
  
  <h3>How do I run the App?</h3>
@@ -27,7 +27,7 @@
 
 <h3> Steps to be followed to run: </h3>
 <ul>
- <li>Clone the app. run <b> npm i inisde both the fractal-todo and todo-db folder </b>.</li>
+ <li>Clone the app. run <b> npm i inside both the fractal-todo and todo-db folder </b>.</li>
  <li>Run npm start from inside fractal-todo.</li>
  <li> Run node app.js from inside todo-db folder.</li>
 
