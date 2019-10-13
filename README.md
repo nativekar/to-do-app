@@ -1,31 +1,40 @@
-What the heck is this app anyway?
-This To-Do App was designed and built as part of a coding exercise for Fractal Analytics.
+<h3>What the heck is this app anyway?</h3>
 
-How does this work?
-THe app offers the following rudimentary functionalities:
- 1 The ability to create a Bucket and add ToDos under it.
- 2 The ability to delete/update a Bucket.
- 3 To Mark the ToDos as done, and vice versa.
- 4 The ability to drag and dro buckets in order to rearrange them.
+<p>This To-Do App was designed and built to offer the following rudimentary functionalities:</p>
+<ul>
+<li> The ability to create a Bucket and add ToDos under it. </li>
+
+<li> The ability to delete/update a Bucket. </li>
+
+<li> To mark the ToDos as done, and vice versa.</li>
+
+<li> The ability to drag and drop buckets in order to rearrange them. </li>
+</ul>
  
- Will the Developer be adding feature(s) in the near future?
- Sure. I'd love to work on it in my lesiure. What features have I in mind? Well, to start with:
- 1 To add multiple ToDos.
- 2 To be able to group multiple ToDos within a bucket.
-
- Is there more work to be done other than adding feature(s)?
- Yes. I still have to write Unit test cases.
-
- How do I run the App?
- To be able to run the app on your local machine, you'll need the following:
+ <h3>How do I run the App?</h3>
+ <p>To be able to run the app on your local machine, you'll need the following:</p>
+  <b> 
   Node/NPM.
   MySQL Instance.
+  </b>
 
-Steps to be followed to run:
- Clone the app. run npm i inisde both the fractal-todo and todo-db folder.
- Run npm start from inside fractal-todo
- Run node app.js from inside todo-db folder.
- Without running app.js from within todo-db - you'll not be able to make calls to the DB.
- A local instance of MySQL is a MUST.
- 
+<h3> Steps to be followed to run: </h3>
+<ul>
+ <li>Clone the app. run <b> npm i inside both the todo-ui and todo-db folder </b>.</li>
+ <li>Run <i>npm start</i> from inside fractal-todo.</li>
+ <li> Run <i>node app.js</i> from inside todo-db folder.</li>
 
+<b> Without running app.js from within todo-db - you'll not be able to make calls to the DB.
+A local instance of MySQL is a MUST. </b>
+
+<h3> Will the Developer be adding feature(s) in the near future? </h3>
+
+<p>Sure. I'd love to work on it in my lesiure. What features have I in mind? Well, to start with:</p>
+<ul>
+<li>To add multiple ToDos.</li>
+<li>To be able to group multiple ToDos within a bucket.</li>
+</ul>
+
+<h3> Is there more work to be done other than adding feature(s)? </h3>
+
+<p>Yes. I still have to write Unit test cases.</p>
