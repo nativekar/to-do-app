@@ -23,6 +23,7 @@
  <li>Clone the app. run <b> npm i inside both the todo-ui and todo-db folder </b>.</li>
  <li>Run <i>npm start</i> from inside fractal-todo.</li>
  <li> Run <i>node app.js</i> from inside todo-db folder.</li>
+</ul>
 
 <b> Without running app.js from within todo-db - you'll not be able to make calls to the DB. A local instance of MySQL is a MUST. </b>
 
