@@ -1,13 +1,31 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
+import axios from "axios";
 import Task from "./Task";
 
 class List extends React.Component {
   state = {
-    todos: []
+    todos: [],
+    newList: false,
+    name: ""
   };
 
-  onAddTask() {}
+  onAddTask = () => {};
+
+  // handleDeleteList = () => {
+  //   const that = this;
+  //   axios
+  //     .post("http://localhost:8000/deleteTodoList", {
+  //       name
+  //     })
+  //     .then(function(response) {
+  //       that.props.refreshDetails();
+  //     })
+  //     .catch(function(error) {
+  //       console.log(`Error ${error} encountered`);
+  //     });
+  //   this.setState({ newList: false, name: "" });
+  // };
 
   onDragOver = ev => {
     ev.preventDefault();

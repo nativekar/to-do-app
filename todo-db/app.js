@@ -41,13 +41,10 @@ app.post("/saveTodoList", function(req, res) {
 
 // query call to update a bucket
 app.post("/updateTodoList", function(req, res) {
-  const newList = {
-    name: req.body.name,
-    id: req.body.id
-  };
+  const newName = req.body.name;
   connection.query(
     "UPDATE todolist SET name = ? Where id = ?",
-    newList,
+    newName,
     function(error, results) {
       if (error) throw error;
       res.send(results);
@@ -62,9 +59,8 @@ app.post("/deleteTodoList", function(req, res) {
     id: req.body.id
   };
   connection.query(
-    "DELETE FROM todolist WHERE id = ?",
-    newList.id,
-    newList.name,
+    "DELETE FROM todolist, tasklist USING todolist INNER JOIN tasklist",
+    newList,
     function(error, results) {
       if (error) throw error;
       res.send(results);
@@ -74,10 +70,7 @@ app.post("/deleteTodoList", function(req, res) {
 
 //query call to get names for all buckets for suggestionsList
 app.get("/nameSuggestions", function(req, res) {
-  connection.query("select tl.name as tasklistname todolist", function(
-    error,
-    results
-  ) {
+  connection.query("select name from todolist", function(error, results) {
     if (error) throw error;
     res.send(results);
   });
