@@ -1,47 +1,47 @@
-What the heck is this app anyway?
+<h3>What the heck is this app anyway?</h3>
 
-This To-Do App was designed and built as part of a coding exercise for Fractal Analytics.
+<p>This To-Do App was designed and built as part of a coding exercise for Fractal Analytics.</p>
 
-How does this work?
+<h3>How does this work?</h3>
 
-The app offers the following rudimentary functionalities:
+<p>The app offers the following rudimentary functionalities:</p>
+<ul>
+<li> The ability to create a Bucket and add ToDos under it. </li>
 
- 1 The ability to create a Bucket and add ToDos under it.
+<li> The ability to delete/update a Bucket. </li>
 
- 2 The ability to delete/update a Bucket.
+<li> To Mark the ToDos as done, and vice versa.</li>
 
- 3 To Mark the ToDos as done, and vice versa.
-
- 4 The ability to drag and dro buckets in order to rearrange them.
+<li> The ability to drag and dro buckets in order to rearrange them. </li>
+</ul>
  
-  How do I run the App?
+ <h3>How do I run the App?</h3>
 
- To be able to run the app on your local machine, you'll need the following:
+ <p>To be able to run the app on your local machine, you'll need the following:</p>
 
+  <h3> 
   Node/NPM.
 
   MySQL Instance.
+  </h3>
 
-Steps to be followed to run:
+<h3> Steps to be followed to run: </h3>
+<ul>
+ <li>Clone the app. run <b> npm i inisde both the fractal-todo and todo-db folder </b>.</li>
+ <li>Run npm start from inside fractal-todo.</li>
+ <li> Run node app.js from inside todo-db folder.</li>
 
- Clone the app. run <b> npm i inisde both the fractal-todo and todo-db folder </b>.
-
- Run npm start from inside fractal-todo.
-
- Run node app.js from inside todo-db folder.
-
- Without running app.js from within todo-db - you'll not be able to make calls to the DB.
-
- A local instance of MySQL is a MUST.
+<b> Without running app.js from within todo-db - you'll not be able to make calls to the DB.
+ A local instance of MySQL is a MUST. </b>
  
- Will the Developer be adding feature(s) in the near future?
+ <h3> Will the Developer be adding feature(s) in the near future? </h3>
 
- Sure. I'd love to work on it in my lesiure. What features have I in mind? Well, to start with:
+ <p>Sure. I'd love to work on it in my lesiure. What features have I in mind? Well, to start with:</p>
+ <ul>
+ <li>To add multiple ToDos.</li>
+ <li>To be able to group multiple ToDos within a bucket.</li>
+ </ul>
 
- 1 To add multiple ToDos.
+ <h3> Is there more work to be done other than adding feature(s)? </h3>
 
- 2 To be able to group multiple ToDos within a bucket.
-
- Is there more work to be done other than adding feature(s)?
-
- Yes. I still have to write Unit test cases.
+ <p>Yes. I still have to write Unit test cases.</p>
