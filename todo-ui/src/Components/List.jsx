@@ -25,7 +25,7 @@ class List extends React.Component {
     }
   };
 
-  saveTodoList() {
+  handleSaveList() {
     const that = this;
     axios
       .post("http://localhost:8000/saveTodoList", {
@@ -40,12 +40,10 @@ class List extends React.Component {
       });
   }
 
-  updateTodoList() {
+  handleUpdateList() {
     const that = this;
     axios
       .post("http://localhost:8000/updateTodoList", {
-        id: this.props.task.id,
-        isdone: this.state.isChecked,
         name: this.state.name
       })
       .then(function(response) {
@@ -91,9 +89,8 @@ class List extends React.Component {
     if (name.length === 0) {
       return;
     }
-    if (task.newTask) this.saveTodoList();
-    else this.updateTodoList();
-
+    if (task.newTask) this.handleSaveList();
+    else this.handleUpdateList();
     this.setState({ editing: false, name: "" });
   }
 
