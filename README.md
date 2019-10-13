@@ -16,14 +16,11 @@
 </ul>
  
  <h3>How do I run the App?</h3>
-
  <p>To be able to run the app on your local machine, you'll need the following:</p>
-
-  <h3> 
+  <b> 
   Node/NPM.
-
   MySQL Instance.
-  </h3>
+  </b>
 
 <h3> Steps to be followed to run: </h3>
 <ul>
