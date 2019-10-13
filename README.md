@@ -24,9 +24,8 @@
  <li>Run <i>npm start</i> from inside fractal-todo.</li>
  <li> Run <i>node app.js</i> from inside todo-db folder.</li>
 
-<b> Without running app.js from within todo-db - you'll not be able to make calls to the DB.
-A local instance of MySQL is a MUST. </b>
-
+<b> Without running app.js from within todo-db - you'll not be able to make calls to the DB. A local instance of MySQL is a MUST. </b>
+ 
 <h3> Will the Developer be adding feature(s) in the near future? </h3>
 
 <p>Sure. I'd love to work on it in my lesiure. What features have I in mind? Well, to start with:</p>
