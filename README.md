@@ -10,7 +10,7 @@
 
 <li> The ability to delete/update a Bucket. </li>
 
-<li> To Mark the ToDos as done, and vice versa.</li>
+<li> To mark the ToDos as done, and vice versa.</li>
 
 <li> The ability to drag and drop buckets in order to rearrange them. </li>
 </ul>
