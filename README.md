@@ -1,10 +1,6 @@
 <h3>What the heck is this app anyway?</h3>
 
-<p>This To-Do App was designed and built as part of a coding exercise for Fractal Analytics.</p>
-
-<h3>How does this work?</h3>
-
-<p>The app offers the following rudimentary functionalities:</p>
+<p>This To-Do App was designed and built to offer the following rudimentary functionalities:</p>
 <ul>
 <li> The ability to create a Bucket and add ToDos under it. </li>
 
