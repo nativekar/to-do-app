@@ -24,7 +24,7 @@ The app offers the following rudimentary functionalities:
 
 Steps to be followed to run:
 
- Clone the app. run npm i inisde both the fractal-todo and todo-db folder.
+ Clone the app. run <b> npm i inisde both the fractal-todo and todo-db folder </b>.
 
  Run npm start from inside fractal-todo.
 
