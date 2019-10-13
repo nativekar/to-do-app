@@ -34,14 +34,14 @@
 <b> Without running app.js from within todo-db - you'll not be able to make calls to the DB.
  A local instance of MySQL is a MUST. </b>
  
- <h3> Will the Developer be adding feature(s) in the near future? </h3>
+<h3> Will the Developer be adding feature(s) in the near future? </h3>
 
- <p>Sure. I'd love to work on it in my lesiure. What features have I in mind? Well, to start with:</p>
- <ul>
- <li>To add multiple ToDos.</li>
- <li>To be able to group multiple ToDos within a bucket.</li>
- </ul>
+<p>Sure. I'd love to work on it in my lesiure. What features have I in mind? Well, to start with:</p>
+<ul>
+<li>To add multiple ToDos.</li>
+<li>To be able to group multiple ToDos within a bucket.</li>
+</ul>
 
- <h3> Is there more work to be done other than adding feature(s)? </h3>
+<h3> Is there more work to be done other than adding feature(s)? </h3>
 
- <p>Yes. I still have to write Unit test cases.</p>
+<p>Yes. I still have to write Unit test cases.</p>
