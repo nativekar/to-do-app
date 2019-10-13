@@ -8,7 +8,6 @@
 
 <li> To mark the ToDos as done, and vice versa.</li>
 
-<li> The ability to drag and drop buckets in order to rearrange them. </li>
 </ul>
  
  <h3>How do I run the App?</h3>
